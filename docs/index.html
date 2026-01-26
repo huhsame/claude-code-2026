@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>클로드 코드 교육 교재</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="SKT AXCX 프로젝트 - 클로드 코드 교육 커리큘럼">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #da7756;
+    }
+    .sidebar {
+      padding-top: 20px;
+    }
+    .sidebar-nav li {
+      margin: 8px 0;
+    }
+    .sidebar-nav li a {
+      color: #364149;
+    }
+    .sidebar-nav li a:hover {
+      color: #da7756;
+    }
+    .markdown-section h1 {
+      border-bottom: 2px solid #da7756;
+      padding-bottom: 10px;
+    }
+    .markdown-section h2 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    .markdown-section code {
+      background-color: #f6f6f6;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .markdown-section pre {
+      background-color: #2d2d2d;
+      border-radius: 8px;
+    }
+    .markdown-section table {
+      display: table;
+      width: 100%;
+    }
+    .markdown-section table th {
+      background-color: #f6f6f6;
+    }
+    .copy-code-button {
+      background: #da7756;
+    }
+    /* 좋은 예/나쁜 예 스타일 */
+    .tip {
+      background-color: #f0f9eb;
+      border-left: 4px solid #67c23a;
+      padding: 12px 24px;
+      margin: 16px 0;
+    }
+    .warning {
+      background-color: #fdf6ec;
+      border-left: 4px solid #e6a23c;
+      padding: 12px 24px;
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">로딩 중...</div>
+  <script>
+    window.$docsify = {
+      name: '클로드 코드 교육',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      search: {
+        placeholder: '검색어를 입력하세요',
+        noData: '검색 결과가 없습니다',
+        depth: 3
+      },
+      copyCode: {
+        buttonText: '복사',
+        successText: '복사됨!'
+      },
+      pagination: {
+        previousText: '이전',
+        nextText: '다음',
+        crossChapter: true
+      },
+      auto2top: true,
+      homepage: 'README.md'
+    }
+  </script>
+  <!-- Docsify -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 검색 플러그인 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- 코드 복사 플러그인 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <!-- 페이지네이션 플러그인 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 코드 하이라이팅 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+</body>
+</html>

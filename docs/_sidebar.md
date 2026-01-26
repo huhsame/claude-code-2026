@@ -1,0 +1,26 @@
+<!-- docs/_sidebar.md -->
+
+* **시작하기**
+  * [홈](/)
+
+* **Day 1 - 기초**
+  * [챕터 1. 오프닝](chapter-01.md)
+  * [챕터 2. 환경 설치](chapter-02.md)
+  * [챕터 3. 클로드 코드 기본 사용법](chapter-03.md)
+  * [챕터 4. 가계부 실습 - 시연](chapter-04.md)
+  * [챕터 5. 가계부 실습 - 각자 개발](chapter-05.md)
+  * [챕터 6. Supabase 계정 설치](chapter-06.md)
+  * [챕터 7. Supabase 연결 - 시연](chapter-07.md)
+  * [챕터 8. Supabase 연결 - 각자 실습](chapter-08.md)
+  * [챕터 9. GitHub 계정 설치](chapter-09.md)
+  * [챕터 10. 당근마켓 클론 - 시연](chapter-10.md)
+  * [챕터 11. 당근마켓 - Git 브랜치 실습](chapter-11.md)
+  * [챕터 12. Vercel 계정 설치](chapter-12.md)
+  * [챕터 13. Vercel 배포 - 시연](chapter-13.md)
+
+* **Day 2 - 심화**
+  * [챕터 14. 간단 챗봇 만들기](chapter-14.md)
+  * [챕터 15. 파일 기반 챗봇](chapter-15.md)
+  * [챕터 16. 스토리→이미지 생성기](chapter-16.md)
+  * [챕터 17. 스킬 소개](chapter-17.md)
+  * [챕터 18. 에이전트 소개](chapter-18.md)
