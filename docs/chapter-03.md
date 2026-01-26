@@ -41,7 +41,7 @@ Ctrl + `
 
 터미널이 열렸다면, 아래 명령어를 입력하고 Enter를 누르세요.
 
-```bash
+```powershell
 claude
 ```
 
@@ -81,14 +81,17 @@ Ctrl + C
 |--------|------|------|
 | `cd` | 폴더 이동 | `cd Desktop` (바탕화면으로 이동) |
 | `cd ..` | 상위 폴더로 이동 | `cd ..` |
-| `dir` | 현재 폴더의 파일 목록 보기 (Windows) | `dir` |
-| `cls` | 터미널 화면 지우기 (Windows) | `cls` |
+| `ls` | 현재 폴더의 파일 목록 보기 | `ls` |
+| `clear` | 터미널 화면 지우기 | `clear` |
+| `mkdir` | 새 폴더 만들기 | `mkdir my-project` |
+
+> **참고**: PowerShell은 Mac/Linux와 비슷한 명령어를 지원합니다.
 
 **폴더 이동 예시**
 
 바탕화면에 `my-project`라는 폴더를 만들고 이동하려면:
 
-```bash
+```powershell
 cd Desktop
 mkdir my-project
 cd my-project
@@ -276,7 +279,7 @@ Ctrl + `
 
 ### Step 3: 클로드 코드 실행
 
-```bash
+```powershell
 claude
 ```
 
