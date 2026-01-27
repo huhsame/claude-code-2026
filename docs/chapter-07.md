@@ -1,0 +1,287 @@
+# 챕터 7. 가계부에 Supabase 연결하기
+
+> 이 챕터에서는 클로드 코드의 안내에 따라 가계부와 Supabase를 연결합니다.
+> 클로드가 알려주는 대로 따라하면 됩니다.
+
+---
+
+## 7-1. 클로드에게 연결 요청하기
+
+### 가계부 프로젝트 열기
+
+챕터 5에서 만든 가계부 프로젝트를 VS Code에서 엽니다.
+
+1. VS Code 실행
+2. `파일(File)` → `폴더 열기(Open Folder)`
+3. `budget` 폴더 선택
+
+### 클로드 코드 실행
+
+터미널을 열고 클로드 코드를 실행합니다.
+
+```powershell
+claude
+```
+
+### Supabase 연결 요청
+
+클로드에게 아래와 같이 요청합니다.
+
+```
+지금 만든 가계부 데이터를 Supabase에 저장하고 싶어.
+새로고침해도 데이터가 유지되게 연결해줘.
+나는 Supabase 계정이랑 프로젝트는 이미 만들어뒀어.
+```
+
+---
+
+## 7-2. 클로드의 안내 따라하기
+
+### 클로드가 이런 식으로 답변합니다
+
+클로드가 Supabase 연결 방법을 안내해줍니다. 대략 아래와 같은 내용이 나옵니다.
+
+<!-- 스크린샷: 클로드 응답 예시 -->
+![클로드 응답](./images/ch07-claude-response.png)
+
+```
+Supabase에 연결하려면 몇 가지 정보가 필요합니다.
+
+1. Supabase 프로젝트의 URL
+2. Supabase 프로젝트의 API Key (anon key)
+
+이 정보는 Supabase 대시보드에서 찾을 수 있습니다.
+Project Settings → API 에서 확인할 수 있어요.
+
+찾으셨다면 알려주세요!
+```
+
+> **핵심**: 클로드가 무엇을 해야 하는지 알려줍니다. 그대로 따라하면 됩니다.
+
+---
+
+## 7-3. Supabase에서 정보 찾기
+
+클로드가 요청한 정보를 Supabase에서 찾아봅시다.
+
+### Step 1: Supabase 대시보드 접속
+
+브라우저에서 [supabase.com](https://supabase.com)에 접속하고 로그인합니다.
+챕터 6에서 만든 프로젝트를 클릭합니다.
+
+### Step 2: Project Settings 열기
+
+왼쪽 메뉴 하단에서 **톱니바퀴 아이콘 (Project Settings)**을 클릭합니다.
+
+<!-- 스크린샷: Project Settings 위치 -->
+![Project Settings](./images/ch07-project-settings.png)
+
+### Step 3: API 메뉴 선택
+
+왼쪽 메뉴에서 **API**를 클릭합니다.
+
+<!-- 스크린샷: API 메뉴 -->
+![API 메뉴](./images/ch07-api-menu.png)
+
+### Step 4: URL과 API Key 확인
+
+두 가지 정보를 찾습니다.
+
+| 항목 | 위치 | 설명 |
+|------|------|------|
+| **Project URL** | 상단 | `https://xxxx.supabase.co` 형태 |
+| **anon public** | API Keys 섹션 | `eyJhbG...` 으로 시작하는 긴 문자열 |
+
+<!-- 스크린샷: URL과 API Key 위치 -->
+![URL과 API Key](./images/ch07-url-apikey.png)
+
+> **주의**: `service_role` 키가 아닌 **anon public** 키를 사용하세요!
+
+### Step 5: 복사해두기
+
+두 정보를 복사해서 메모장에 붙여넣어 둡니다.
+
+```
+URL: https://abcdefg.supabase.co
+API Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+---
+
+## 7-4. 클로드에게 정보 전달하기
+
+### 클로드에게 알려주기
+
+복사한 정보를 클로드에게 전달합니다.
+
+```
+찾았어.
+URL: https://abcdefg.supabase.co
+API Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+### 클로드가 다음 단계를 안내합니다
+
+클로드가 다음과 같이 진행합니다.
+
+```
+좋습니다! 이제 몇 가지 작업을 할게요.
+
+1. .env 파일을 만들어서 API Key를 저장할게요
+2. Supabase 클라이언트를 설정할게요
+3. 데이터 저장/불러오기 코드를 수정할게요
+
+진행해도 될까요?
+```
+
+**"응" 또는 "진행해줘"** 라고 답하면 클로드가 작업을 시작합니다.
+
+---
+
+## 7-5. 테이블 생성하기
+
+### 클로드가 테이블 생성을 요청할 수 있습니다
+
+클로드가 이렇게 말할 수 있습니다.
+
+```
+Supabase에 테이블을 만들어야 해요.
+Supabase 대시보드에서 아래 SQL을 실행해주세요.
+
+CREATE TABLE transactions (
+  id SERIAL PRIMARY KEY,
+  date DATE NOT NULL,
+  type VARCHAR(10) NOT NULL,
+  category VARCHAR(50),
+  amount INTEGER NOT NULL,
+  memo TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+### SQL 실행 방법
+
+1. Supabase 대시보드에서 **SQL Editor** 클릭 (왼쪽 메뉴)
+2. 클로드가 알려준 SQL을 붙여넣기
+3. **Run** 버튼 클릭
+
+<!-- 스크린샷: SQL Editor에서 실행 -->
+![SQL Editor](./images/ch07-sql-editor.png)
+
+> **팁**: SQL을 몰라도 됩니다. 클로드가 알려주는 것을 복사해서 붙여넣기만 하면 됩니다.
+
+### 테이블 생성 확인
+
+왼쪽 메뉴에서 **Table Editor**를 클릭하면 방금 만든 테이블이 보입니다.
+
+<!-- 스크린샷: Table Editor에서 테이블 확인 -->
+![테이블 확인](./images/ch07-table-created.png)
+
+---
+
+## 7-6. 연결 완료 및 테스트
+
+### 클로드가 코드 수정을 완료합니다
+
+클로드가 필요한 파일들을 수정합니다. 권한 요청이 나오면 **Y** 또는 **A**를 눌러 허용합니다.
+
+<!-- 스크린샷: 코드 수정 중 -->
+![코드 수정](./images/ch07-code-update.png)
+
+### 실행해서 테스트하기
+
+클로드에게 실행을 요청하거나 직접 실행합니다.
+
+```
+실행해줘
+```
+
+또는 새 터미널에서:
+
+```powershell
+npm run dev
+```
+
+### 연결 테스트
+
+1. 브라우저에서 가계부 열기
+2. 수입/지출 몇 개 입력
+3. **브라우저 새로고침** (F5)
+4. 데이터가 **유지되는지** 확인
+
+<!-- 스크린샷: 새로고침 후 데이터 유지 -->
+![데이터 유지](./images/ch07-data-persisted.png)
+
+데이터가 유지되면 성공입니다!
+
+---
+
+## 7-7. Supabase에서 데이터 확인하기
+
+### 저장된 데이터 직접 보기
+
+Supabase 대시보드에서 실제로 저장된 데이터를 확인할 수 있습니다.
+
+1. Supabase 대시보드 접속
+2. 왼쪽 메뉴에서 **Table Editor** 클릭
+3. `transactions` 테이블 클릭
+4. 입력한 데이터가 보임
+
+<!-- 스크린샷: Supabase에서 데이터 확인 -->
+![Supabase 데이터](./images/ch07-supabase-data.png)
+
+> 엑셀처럼 데이터가 표 형태로 저장되어 있습니다!
+
+---
+
+## 7-8. 문제가 생겼을 때
+
+### 클로드에게 에러 보여주기
+
+연결 중 에러가 발생하면 클로드에게 보여주세요.
+
+```
+에러가 났어:
+[에러 메시지 복사해서 붙여넣기]
+```
+
+클로드가 원인을 분석하고 해결 방법을 알려줍니다.
+
+### 자주 발생하는 문제
+
+**문제 1: API Key가 잘못됨**
+- `anon public` 키가 맞는지 확인
+- 복사할 때 앞뒤 공백이 들어갔는지 확인
+
+**문제 2: 테이블이 없음**
+- SQL Editor에서 테이블 생성 SQL을 실행했는지 확인
+- Table Editor에서 테이블이 보이는지 확인
+
+**문제 3: 권한 오류**
+- Supabase 대시보드 → Authentication → Policies 확인
+- 클로드에게 "권한 오류가 나는데 해결해줘"라고 요청
+
+---
+
+## 정리
+
+| 단계 | 내용 |
+|------|------|
+| 1 | 클로드에게 "Supabase 연결해줘" 요청 |
+| 2 | 클로드가 필요한 정보(URL, API Key) 요청 |
+| 3 | Supabase 대시보드에서 정보 찾아서 전달 |
+| 4 | 클로드 안내에 따라 테이블 생성 |
+| 5 | 클로드가 코드 수정 |
+| 6 | 실행 후 새로고침해서 데이터 유지 확인 |
+
+**핵심**: 클로드가 안내해주는 대로 따라하면 됩니다!
+
+**다음 챕터에서는** Git과 GitHub을 배웁니다.
+
+---
+
+<div style="text-align: center; margin-top: 40px;">
+
+[← 이전: 챕터 6. 데이터베이스와 Supabase](chapter-06.md) | [다음: 챕터 8. GitHub 계정 설치 →](chapter-08.md)
+
+</div>
