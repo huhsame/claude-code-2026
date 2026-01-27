@@ -30,7 +30,7 @@ Node.js는 웹앱을 실행하는 데 필요한 프로그램입니다.
 브라우저에서 아래 주소로 접속합니다.
 
 ```
-https://nodejs.org
+https://nodejs.org/ko/download
 ```
 
 <!-- 스크린샷: Node.js 공식 사이트 메인 -->
@@ -38,20 +38,19 @@ https://nodejs.org
 
 ### Step 2: LTS 버전 다운로드
 
-**LTS** 버튼을 클릭해서 다운로드합니다.
-
-> **LTS**는 "Long Term Support"의 약자로, 안정적인 버전입니다.
-> 오른쪽의 Current 버전이 아닌 **왼쪽의 LTS 버전**을 선택하세요.
+설치 버튼을 클릭해서 다운로드 합니다. 
 
 <!-- 스크린샷: LTS 다운로드 버튼 -->
-![LTS 다운로드](./images/ch02-nodejs-lts.png)
+
+![LTS 다운로드](iShot_2026-01-28_00.29.39.png)
 
 ### Step 3: 설치 파일 실행
 
 다운로드된 파일을 더블클릭해서 실행합니다.
 
 <!-- 스크린샷: 다운로드된 설치 파일 -->
-![설치 파일](./images/ch02-nodejs-installer.png)
+
+![alt text](iShot_2026-01-28_00.31.09.png)
 
 ### Step 4: 설치 진행
 
@@ -63,15 +62,9 @@ https://nodejs.org
 4. **Custom Setup** → 기본값 그대로 → `Next`
 5. **Ready to install** → `Install`
 
-<!-- 스크린샷: 설치 진행 화면들 -->
-![설치 진행](./images/ch02-nodejs-install-steps.png)
-
 ### Step 5: 설치 완료
 
 **Finish** 버튼을 클릭하면 설치가 완료됩니다.
-
-<!-- 스크린샷: 설치 완료 화면 -->
-![설치 완료](./images/ch02-nodejs-complete.png)
 
 ### Step 6: 설치 확인
 
@@ -82,13 +75,13 @@ https://nodejs.org
 3. 아래 명령어 입력 후 Enter
 
 ```
-node --version
+node --v
 ```
 
 버전 번호가 나오면 성공입니다. (예: `v20.x.x`)
 
 <!-- 스크린샷: node --version 결과 -->
-![버전 확인](./images/ch02-nodejs-version.png)
+![alt text](image.png)
 
 ---
 
@@ -106,29 +99,24 @@ VS Code(Visual Studio Code)는 코드를 작성하는 프로그램입니다.
 브라우저에서 아래 주소로 접속합니다.
 
 ```
-https://code.visualstudio.com
+https://code.visualstudio.com/download
 ```
 
-<!-- 스크린샷: VS Code 공식 사이트 -->
-![VS Code 사이트](./images/ch02-vscode-site.png)
 
 ### Step 2: 다운로드
 
 **Download for Windows** 버튼을 클릭합니다.
 
 <!-- 스크린샷: 다운로드 버튼 -->
-![다운로드 버튼](./images/ch02-vscode-download.png)
+![alt text](image-1.png)
 
 ### Step 3: 설치 파일 실행
 
 다운로드된 파일을 더블클릭해서 실행합니다.
 
-<!-- 스크린샷: 설치 파일 -->
-![설치 파일](./images/ch02-vscode-installer.png)
-
 ### Step 4: 설치 진행
 
-설치 마법사가 나타나면 진행합니다.
+설치 마법사가 나타나면 진행합니다. 다 Next를 누르시고, 체크박스가 많이 나와있는 곳에서만 체크박스를 확인해주세요.
 
 1. **License Agreement** → "I accept" 선택 → `Next`
 2. **Select Destination** → 기본값 그대로 → `Next`
@@ -140,7 +128,7 @@ https://code.visualstudio.com
 5. **Ready to Install** → `Install`
 
 <!-- 스크린샷: Additional Tasks 체크 화면 -->
-![추가 설정](./images/ch02-vscode-additional.png)
+![alt text](iShot_2026-01-27_23.24.08.png)
 
 > **Add to PATH**는 꼭 체크하세요! 터미널에서 VS Code를 실행할 때 필요합니다.
 
@@ -150,14 +138,14 @@ https://code.visualstudio.com
 "Launch Visual Studio Code" 체크박스가 선택되어 있으면 바로 VS Code가 실행됩니다.
 
 <!-- 스크린샷: 설치 완료 -->
-![설치 완료](./images/ch02-vscode-complete.png)
+![alt text](iShot_2026-01-27_23.27.11.png)
 
-### Step 6: VS Code 실행 확인
+### Step 6: VS Code 
 
-VS Code가 정상적으로 실행되는지 확인합니다.
+보통 3분할, 4분할로 사용합니다. 메인인 가운데는 메모장처럼 코드를 직접 작성하는 곳이고, 왼쪽은 폴더, 오른쪽은 채팅(우리는 사용하지 않음), 그리고 아래쪽은 터미널입니다. x표시로 각 분할창을 끌수있고, VS Code의 우측상단의 아이콘들을 통해 다시 키고 끄고 할 수 있습니다. 
 
-<!-- 스크린샷: VS Code 첫 실행 화면 -->
-![VS Code 실행](./images/ch02-vscode-welcome.png)
+메모장 파일을 생성하고 수정해보세요.
+
 
 ---
 
@@ -172,47 +160,64 @@ WSL(Windows Subsystem for Linux)은 Windows에서 리눅스를 사용할 수 있
 
 클로드 코드는 리눅스/Mac 환경에서 더 잘 작동하기 때문에, Windows에서는 WSL을 사용합니다.
 
-### Step 1: PowerShell 관리자 권한으로 실행
+### Step 1: VS Code 터미널 열기
 
-1. `Windows 키` 를 누릅니다
-2. `PowerShell` 검색
-3. **"관리자 권한으로 실행"** 클릭
+VS Code에서 터미널을 엽니다.
 
-<!-- 스크린샷: PowerShell 관리자 권한 실행 -->
-![PowerShell 관리자](./images/ch02-powershell-admin.png)
+단축키: `` Ctrl + ` ``
 
-### Step 2: WSL 설치 명령어 실행
+터미널이 열리면 기본적으로 **PowerShell**이 실행됩니다.
 
-아래 명령어를 입력하고 Enter를 누릅니다.
+<!-- 스크린샷: VS Code PowerShell 터미널 -->
+![PowerShell 터미널](./images/ch02-vscode-powershell.png)
+
+### Step 2: WSL 설치 여부 확인
+
+아래 명령어를 입력해서 WSL이 이미 설치되어 있는지 확인합니다.
+
+```powershell
+wsl --version
+```
+
+**결과에 따라 다음 단계가 달라집니다:**
+
+| 결과 | 의미 | 다음 단계 |
+|------|------|----------|
+| 버전 번호가 나옴 | 이미 설치됨 | → Step 5로 이동 |
+| 에러 메시지 | 설치 안 됨 | → Step 3 진행 |
+
+<!-- 스크린샷: wsl --version 결과 (설치됨/안됨 둘 다) -->
+![alt text](image-2.png)
+
+### Step 3: WSL 설치 (설치 안 된 경우만)
+
+WSL이 설치되어 있지 않다면, 아래 명령어를 입력합니다.
 
 ```powershell
 wsl --install
 ```
 
-<!-- 스크린샷: wsl --install 실행 -->
-![WSL 설치](./images/ch02-wsl-install.png)
-
 설치가 완료되면 **컴퓨터를 재시작**합니다.
 
-### Step 3: 재시작 후 Ubuntu 설정
+### Step 4: 재시작 후 Ubuntu 설정 (설치 안 된 경우만)
+
+> 이미 WSL이 설치되어 있었다면 이 단계를 건너뛰세요.
 
 컴퓨터를 재시작하면 Ubuntu 설정 창이 자동으로 나타납니다.
 
 1. **사용자 이름** 입력 (영어, 소문자, 공백 없이)
-   - 예: `student`, `myname`
+   - 예: `huhsame`, `myname`
 2. **비밀번호** 입력
    - 입력할 때 화면에 안 보이는 게 정상입니다
    - 비밀번호를 입력하고 Enter
 3. **비밀번호 확인** - 다시 한번 입력
 
-<!-- 스크린샷: Ubuntu 사용자 설정 -->
-![Ubuntu 설정](./images/ch02-ubuntu-setup.png)
 
 > **비밀번호가 안 보여요!**
 > 리눅스에서는 비밀번호 입력 시 화면에 아무것도 표시되지 않습니다.
 > 그냥 입력하고 Enter를 누르면 됩니다.
 
-### Step 4: 설치 확인
+### Step 5: 설치 확인
 
 설정이 완료되면 아래와 같은 화면이 나타납니다.
 
@@ -220,8 +225,6 @@ wsl --install
 사용자이름@컴퓨터이름:~$
 ```
 
-<!-- 스크린샷: Ubuntu 설치 완료 -->
-![Ubuntu 완료](./images/ch02-ubuntu-complete.png)
 
 `exit` 를 입력하고 Enter를 눌러 창을 닫습니다.
 
@@ -237,38 +240,39 @@ VS Code를 실행합니다.
 
 ### Step 2: 터미널 열기
 
-상단 메뉴에서 `터미널(Terminal)` → `새 터미널(New Terminal)` 을 클릭합니다.
+상단 메뉴에서 분할창 아이콘을 통해 터미널을 엽니다.
 
 또는 단축키: `` Ctrl + ` ``
 
 <!-- 스크린샷: 터미널 열기 -->
-![터미널 열기](./images/ch02-vscode-terminal.png)
-
+![alt text](image-3.png)
 ### Step 3: 기본 터미널 변경
 
 터미널 오른쪽 상단의 **∨ (아래 화살표)** 버튼을 클릭합니다.
 
 <!-- 스크린샷: 터미널 드롭다운 -->
-![터미널 드롭다운](./images/ch02-terminal-dropdown.png)
+
+![alt text](iShot_2026-01-27_23.43.18.png)
 
 ### Step 4: Select Default Profile 클릭
 
 **Select Default Profile** 을 클릭합니다.
 
 <!-- 스크린샷: Select Default Profile -->
-![Default Profile 선택](./images/ch02-select-default.png)
+
+![alt text](iShot_2026-01-27_23.47.53.png)
 
 ### Step 5: Ubuntu (WSL) 선택
 
 목록에서 **Ubuntu (WSL)** 또는 **WSL** 을 선택합니다.
 
 <!-- 스크린샷: Ubuntu 선택 -->
-![Ubuntu 선택](./images/ch02-select-ubuntu.png)
+![alt text](iShot_2026-01-27_23.48.14.png)
 
 ### Step 6: 새 터미널로 확인
 
 기존 터미널을 닫고 새 터미널을 엽니다.
-
+![alt text](iShot_2026-01-27_23.49.18.png)
 1. 터미널 창의 **휴지통 아이콘** 클릭 (터미널 닫기)
 2. `` Ctrl + ` `` 로 새 터미널 열기
 
@@ -279,9 +283,14 @@ VS Code를 실행합니다.
 ```
 
 <!-- 스크린샷: WSL 터미널 확인 -->
-![WSL 터미널](./images/ch02-wsl-terminal.png)
+
+![alt text](iShot_2026-01-27_23.50.20.png)
 
 > **PowerShell이 아닌 Ubuntu가 기본 터미널이 되었습니다!**
+
+
+터미널의 저 표시는 폴더를 나타냅니다.
+![alt text](image-4.png)
 
 ---
 
@@ -291,37 +300,33 @@ VS Code를 실행합니다.
 
 > **공식 설치 가이드**: https://code.claude.com/docs/en/setup#installation
 
+![alt text](iShot_2026-01-28_00.00.45.png)
+윈도우말고 WSL로 보아야 합니다.
+
+
 ### Step 1: VS Code 터미널 열기
 
 VS Code에서 터미널을 엽니다.
 
-```
-Ctrl + `
-```
+
 
 ### Step 2: 클로드 코드 설치 명령어 실행
 
-**WSL/Ubuntu 터미널에서** 아래 명령어를 입력하고 Enter를 누릅니다.
+**터미널에서** 아까 복사한 명령어를 입력하고 Enter를 누릅니다.
 
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 <!-- 스크린샷: 설치 스크립트 실행 -->
-![클로드 코드 설치](./images/ch02-claude-install.png)
+![alt text](iShot_2026-01-28_00.04.35.png)
+![alt text](iShot_2026-01-28_00.05.00.png)
 
 설치가 진행되고, 완료되면 안내 메시지가 나타납니다.
+![alt text](iShot_2026-01-28_00.08.22.png)
+![alt text](iShot_2026-01-28_00.08.48.png)
 
-> **Mac 사용자도 동일한 명령어**를 사용합니다.
-
-### Step 3: 터미널 재시작
-
-설치 완료 후, **터미널을 닫고 새로 열어야** 합니다.
-
-1. 터미널 창의 **휴지통 아이콘** 클릭 (터미널 닫기)
-2. `` Ctrl + ` `` 로 새 터미널 열기
-
-### Step 4: 설치 확인
+### Step 3: 설치 확인
 
 새 터미널에서 아래 명령어로 확인합니다.
 
@@ -331,8 +336,6 @@ claude --version
 
 버전 번호가 나오면 설치 성공입니다.
 
-<!-- 스크린샷: claude --version 결과 -->
-![버전 확인](./images/ch02-claude-version.png)
 
 > **자동 업데이트**: 이 방식으로 설치하면 클로드 코드가 자동으로 최신 버전을 유지합니다.
 
@@ -349,7 +352,9 @@ claude
 ```
 
 <!-- 스크린샷: claude 실행 -->
-![클로드 실행](./images/ch02-claude-start.png)
+![alt text](iShot_2026-01-28_00.09.20.png)
+![alt text](iShot_2026-01-28_00.12.48.png)
+![alt text](iShot_2026-01-28_00.13.26.png)
 
 ### Step 2: 로그인 진행
 
@@ -357,39 +362,31 @@ claude
 
 화면에 나오는 안내에 따라 진행합니다.
 
+![](iShot_2026-01-28_00.17.14.png)
 1. Enter를 누르면 브라우저가 열립니다
 2. Claude 계정으로 로그인합니다 (없으면 회원가입)
 3. 권한 허용 화면에서 **Allow** 클릭
 
-<!-- 스크린샷: 브라우저 로그인 화면 -->
-![로그인 화면](./images/ch02-claude-login.png)
-
-<!-- 스크린샷: 권한 허용 화면 -->
-![권한 허용](./images/ch02-claude-allow.png)
-
+![alt text](iShot_2026-01-28_00.21.31.png)
+![alt text](iShot_2026-01-28_00.18.38.png)
 ### Step 3: 로그인 완료
 
-브라우저에서 "You may close this window" 메시지가 나오면 성공입니다.
+Login Successful 이라고 나오면 성공입니다.
 
 <!-- 스크린샷: 로그인 완료 -->
-![로그인 완료](./images/ch02-claude-login-complete.png)
 
-### Step 4: 터미널 확인
+![alt text](iShot_2026-01-28_00.19.47.png)
+![alt text](iShot_2026-01-28_00.20.35.png)
 
-VS Code 터미널로 돌아오면 클로드 코드가 실행되어 있습니다.
+### Step 4: 클로드코드 확인
 
-아래와 같은 화면이 나타나면 성공입니다.
+ 클로드 코드가 드디어 실행되었습니다. 앞으로는 지금까지 했던 설치나 세팅 작업 없이, 클로드를 실행하면 바로 이 화면이 나옵니다.
 
-```
-╭────────────────────────────────────────╮
-│ Welcome to Claude Code!                │
-│                                        │
-│ What would you like to do?             │
-╰────────────────────────────────────────╯
-```
 
 <!-- 스크린샷: 클로드 코드 실행 화면 -->
-![클로드 코드 실행](./images/ch02-claude-ready.png)
+
+![alt text](iShot_2026-01-28_00.22.07.png)
+
 
 ### Step 5: 테스트 대화
 
@@ -399,10 +396,9 @@ VS Code 터미널로 돌아오면 클로드 코드가 실행되어 있습니다.
 안녕, 나는 클로드 코드를 처음 써보는 사람이야!
 ```
 
-클로드가 답변하면 설치가 완료된 것입니다!
+클로드가 답변하였습니다 축하합니다.
 
-<!-- 스크린샷: 첫 대화 -->
-![첫 대화](./images/ch02-claude-hello.png)
+
 
 ### Step 6: 종료하기
 
@@ -411,7 +407,9 @@ VS Code 터미널로 돌아오면 클로드 코드가 실행되어 있습니다.
 ```
 /exit
 ```
-
+![alt text](iShot_2026-01-28_00.25.19.png)
+![alt text](iShot_2026-01-28_00.25.46.png)
+![alt text](iShot_2026-01-28_00.26.15.png)
 ---
 
 ## 트러블슈팅
@@ -436,18 +434,6 @@ VS Code 터미널로 돌아오면 클로드 코드가 실행되어 있습니다.
 
 → 시작 메뉴에서 "Ubuntu"를 검색해서 직접 실행하세요.
 
-### 클로드 코드 설치 문제
-
-**문제: `npm install` 에러**
-
-→ Node.js가 제대로 설치되었는지 확인하세요.
-
-```bash
-node --version
-npm --version
-```
-
-둘 다 버전이 나와야 합니다.
 
 **문제: `claude` 명령어가 안 됨**
 
@@ -486,10 +472,10 @@ npm --version
 
 | 프로그램 | 설치 방법 |
 |----------|----------|
-| Node.js | nodejs.org → LTS 다운로드 → 설치 |
+| Node.js | nodejs.org/ko/download → 다운로드 → 설치 |
 | VS Code | code.visualstudio.com → 다운로드 → 설치 |
 | WSL | PowerShell 관리자 → `wsl --install` → 재시작 |
-| 클로드 코드 | 터미널에서 `npm install -g @anthropic-ai/claude-code` |
+| 클로드 코드 | 터미널에서 `curl -fsSL https://claude.ai/install.sh \| bash` |
 
 **다음 챕터에서는** 클로드 코드의 기본 사용법을 배웁니다.
 
