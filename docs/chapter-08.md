@@ -210,12 +210,12 @@ git config --global --list
 | GitHub 가입 | github.com에서 Sign up |
 | Git 설정 | `git config --global user.name/email` |
 
-**다음 챕터에서는** 당근마켓 클론을 만들면서 Git을 실제로 사용해봅니다.
+**다음 챕터에서는** 고구마마켓 클론을 만들면서 Git을 실제로 사용해봅니다.
 
 ---
 
 <div style="text-align: center; margin-top: 40px;">
 
-[← 이전: 챕터 7. 가계부에 Supabase 연결하기](chapter-07.md) | [다음: 챕터 9. 당근마켓 클론 - 시연 →](chapter-09.md)
+[← 이전: 챕터 7. 가계부에 Supabase 연결하기](chapter-07.md) | [다음: 챕터 9. 고구마마켓 클론 - 시연 →](chapter-09.md)
 
 </div>

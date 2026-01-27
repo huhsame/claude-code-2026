@@ -11,9 +11,9 @@
 - [챕터 6. 데이터베이스와 Supabase](chapter-06.md)
 - [챕터 7. 가계부에 Supabase 연결하기](chapter-07.md)
 
-- **당근마켓**
+- **고구마마켓**
 - [챕터 8. Git과 GitHub](chapter-08.md)
-- [챕터 9. 당근마켓 클론 - 시연](chapter-09.md)
+- [챕터 9. 고구마마켓 클론 - 시연](chapter-09.md)
 - [챕터 10. Git 브랜치 실습](chapter-10.md)
 - [챕터 11. Vercel 계정 설치](chapter-11.md)
 - [챕터 12. Vercel 배포 - 시연](chapter-12.md)
