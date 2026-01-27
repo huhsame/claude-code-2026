@@ -15,8 +15,6 @@
 2. 브라우저를 **새로고침**합니다
 3. 입력한 데이터가 **전부 사라집니다**
 
-<!-- 스크린샷: 새로고침 후 데이터 사라진 화면 -->
-![데이터 사라짐](./images/ch06-data-gone.png)
 
 ### 왜 사라질까?
 
@@ -65,8 +63,7 @@
 
 엑셀로 가계부를 만든다고 생각해보세요.
 
-<!-- 스크린샷: 엑셀 가계부 예시 -->
-![엑셀 가계부](./images/ch06-excel-budget.png)
+
 
 | id | 날짜 | 유형 | 카테고리 | 금액 | 메모 |
 |----|------|------|----------|------|------|
@@ -158,7 +155,7 @@ SELECT * FROM transactions WHERE type = '지출'
 
 ### Supabase의 장점
 
-- **무료**: 개인 프로젝트는 무료로 충분
+- **무료**: 개인 프로젝트 2개까지 무료로 충분
 - **쉬움**: 웹 화면에서 클릭만으로 테이블 생성
 - **빠름**: 가입 후 5분이면 사용 가능
 - **안전**: 보안, 백업을 알아서 처리
@@ -167,47 +164,15 @@ SELECT * FROM transactions WHERE type = '지출'
 
 ## 6-5. Supabase 가입하기
 
-### Step 1: Supabase 접속
 
-브라우저에서 아래 주소로 접속합니다.
+브라우저에서 아래 주소로 접속하여 회원가입을 합니다.
 
 ```
 https://supabase.com
 ```
 
-<!-- 스크린샷: Supabase 메인 페이지 -->
-![Supabase 메인](./images/ch06-supabase-main.png)
+![alt text](iShot_2025-11-28_18.09.38.png)
 
-### Step 2: 회원가입
-
-`Start your project` 또는 `Sign Up` 버튼을 클릭합니다.
-
-<!-- 스크린샷: Sign Up 버튼 -->
-![Sign Up](./images/ch06-signup-button.png)
-
-### Step 3: 로그인 방법 선택
-
-두 가지 방법 중 선택할 수 있습니다.
-
-**방법 1: 이메일로 가입**
-- 이메일 주소 입력
-- 비밀번호 설정
-- 이메일 인증
-
-**방법 2: GitHub으로 가입 (추천)**
-- `Continue with GitHub` 클릭
-- 이미 GitHub 계정이 있다면 이 방법이 편합니다
-- 나중에 GitHub을 사용할 예정이니 미리 만들어두면 좋습니다
-
-<!-- 스크린샷: 로그인 방법 선택 화면 -->
-![로그인 방법](./images/ch06-login-options.png)
-
-### Step 4: 가입 완료
-
-가입이 완료되면 Supabase 대시보드로 이동합니다.
-
-<!-- 스크린샷: Supabase 대시보드 -->
-![대시보드](./images/ch06-dashboard.png)
 
 ---
 
@@ -216,56 +181,19 @@ https://supabase.com
 Supabase에서는 프로젝트 단위로 데이터베이스를 관리합니다.
 가계부용 프로젝트를 만들어봅시다.
 
-### Step 1: New Project 클릭
+### Step 1: New Project 
 
-대시보드에서 `New Project` 버튼을 클릭합니다.
+새로운 프로젝트를 생성합시다. 이름과 패스워드를 지정합니다.
+![alt text](iShot_2025-11-28_18.11.35.png)
 
-<!-- 스크린샷: New Project 버튼 -->
-![New Project](./images/ch06-new-project.png)
+> **Region은 가까운 지역** 을 선택해야 속도가 빠릅니다.
 
-### Step 2: Organization 선택
-
-처음이라면 Organization을 먼저 만들어야 할 수 있습니다.
-본인 이름이나 팀 이름으로 만드세요.
-
-<!-- 스크린샷: Organization 선택 -->
-![Organization](./images/ch06-organization.png)
-
-### Step 3: 프로젝트 정보 입력
-
-| 항목 | 입력 내용 |
-|------|----------|
-| **Project name** | `budget` (또는 원하는 이름) |
-| **Database Password** | 안전한 비밀번호 입력 (꼭 기억해두세요!) |
-| **Region** | `Northeast Asia (Seoul)` 선택 |
-
-<!-- 스크린샷: 프로젝트 정보 입력 -->
-![프로젝트 정보](./images/ch06-project-info.png)
-
-> **Region은 Seoul을 선택하세요!**
-> 가까운 지역을 선택해야 속도가 빠릅니다.
-
-### Step 4: Create new project 클릭
-
-정보 입력 후 `Create new project` 버튼을 클릭합니다.
-
-<!-- 스크린샷: Create new project 버튼 -->
-![Create Project](./images/ch06-create-project.png)
 
 ### Step 5: 프로젝트 생성 대기
 
 프로젝트 생성에 1~2분 정도 걸립니다.
 완료되면 프로젝트 대시보드로 이동합니다.
 
-<!-- 스크린샷: 프로젝트 생성 중 -->
-![생성 중](./images/ch06-project-creating.png)
-
-### Step 6: 프로젝트 생성 완료
-
-프로젝트가 생성되면 아래와 같은 화면이 나타납니다.
-
-<!-- 스크린샷: 프로젝트 대시보드 -->
-![프로젝트 대시보드](./images/ch06-project-dashboard.png)
 
 ---
 

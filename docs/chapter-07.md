@@ -15,23 +15,17 @@
 ### Step 2: Connect 버튼 클릭
 
 프로젝트 화면 상단에 **Connect** 버튼이 있습니다. 클릭합니다.
-
-<!-- 스크린샷: Connect 버튼 위치 -->
-![Connect 버튼](./images/ch07-connect-button.png)
+![alt text](iShot_2025-11-28_18.24.34.png)
 
 ### Step 3: MCP 선택
 
 팝업에서 **MCP**를 선택합니다.
 
-<!-- 스크린샷: MCP 선택 -->
-![MCP 선택](./images/ch07-select-mcp.png)
 
 ### Step 4: Claude Code 선택
 
 **Claude Code**를 선택합니다.
 
-<!-- 스크린샷: Claude Code 선택 -->
-![Claude Code 선택](./images/ch07-select-claude-code.png)
 
 ### Step 5: 연결 명령어 복사
 
@@ -43,8 +37,6 @@
 claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/mcp?project_ref=여러분의프로젝트ID"
 ```
 
-<!-- 스크린샷: MCP 연결 명령어 -->
-![MCP 명령어](./images/ch07-mcp-command.png)
 
 > **project_ref** 부분이 여러분의 프로젝트 ID입니다.
 > 각자 다르니까 꼭 본인 대시보드에서 복사하세요!
@@ -67,8 +59,6 @@ claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/
 claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/mcp?project_ref=여러분의프로젝트ID"
 ```
 
-<!-- 스크린샷: 명령어 실행 -->
-![명령어 실행](./images/ch07-run-command.png)
 
 ### 설정 완료 확인
 
@@ -138,8 +128,7 @@ MCP가 연결되어 있으니 클로드가 직접 Supabase를 확인하고 작�
 
 **"응"** 이라고 답하면 클로드가 작업을 시작합니다.
 
-<!-- 스크린샷: 클로드 작업 중 -->
-![클로드 작업](./images/ch07-claude-working.png)
+
 
 ### 권한 요청 시
 
@@ -181,11 +170,9 @@ Supabase 대시보드에서도 확인할 수 있습니다.
 1. [supabase.com](https://supabase.com) 접속
 2. 프로젝트 선택
 3. 왼쪽 메뉴에서 **Table Editor** 클릭
-4. `transactions` 테이블 클릭
+4. 좌측 테이블 목록에서 테이블 클릭
 5. 입력한 데이터가 보임
 
-<!-- 스크린샷: Supabase에서 데이터 확인 -->
-![Supabase 데이터](./images/ch07-supabase-data.png)
 
 > 엑셀처럼 데이터가 표 형태로 저장되어 있습니다!
 
