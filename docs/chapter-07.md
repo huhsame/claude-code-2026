@@ -12,23 +12,30 @@
 [supabase.com](https://supabase.com)에 접속해서 로그인합니다.
 챕터 6에서 만든 프로젝트를 클릭합니다.
 
-### Step 2: Project Settings 열기
+### Step 2: Connect 버튼 클릭
 
-왼쪽 메뉴 하단에서 **톱니바퀴 아이콘 (Project Settings)**을 클릭합니다.
+프로젝트 화면 상단에 **Connect** 버튼이 있습니다. 클릭합니다.
 
-<!-- 스크린샷: Project Settings 위치 -->
-![Project Settings](./images/ch07-project-settings.png)
+<!-- 스크린샷: Connect 버튼 위치 -->
+![Connect 버튼](./images/ch07-connect-button.png)
 
-### Step 3: MCP 연결 정보 찾기
+### Step 3: MCP 선택
 
-왼쪽 메뉴에서 **Integrations** 또는 **MCP**를 찾습니다.
+팝업에서 **MCP**를 선택합니다.
 
-<!-- 스크린샷: Integrations 메뉴 -->
-![Integrations](./images/ch07-integrations.png)
+<!-- 스크린샷: MCP 선택 -->
+![MCP 선택](./images/ch07-select-mcp.png)
 
-### Step 4: 연결 명령어 복사
+### Step 4: Claude Code 선택
 
-Claude Code용 연결 명령어가 있습니다. **Copy** 버튼을 클릭해서 복사합니다.
+**Claude Code**를 선택합니다.
+
+<!-- 스크린샷: Claude Code 선택 -->
+![Claude Code 선택](./images/ch07-select-claude-code.png)
+
+### Step 5: 연결 명령어 복사
+
+화면에 나오는 명령어를 **Copy** 버튼으로 복사합니다.
 
 아래와 비슷한 형태입니다:
 
