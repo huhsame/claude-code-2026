@@ -338,7 +338,25 @@ OX 퀴즈 문제 20개 만들어줘.
 새로고침해도 유지되게 해줘.
 ```
 
-MCP가 이미 설정되어 있으니 클로드가 바로 연결해줍니다!
+#### 같은 Supabase 프로젝트 사용하기
+
+가계부와 같은 Supabase 프로젝트를 사용한다면, **MCP 설정 없이** 바로 사용할 수 있습니다.
+클로드가 새 테이블을 만들어서 데이터를 저장합니다.
+
+#### 새 Supabase 프로젝트 만들기
+
+새 Supabase 프로젝트를 따로 만들고 싶다면:
+
+1. Supabase에서 새 프로젝트 생성 (챕터 6 참고)
+2. 새 프로젝트의 **Connect → MCP → Claude Code** 에서 명령어 복사
+3. 기존 MCP 삭제 후 새로 추가:
+
+```powershell
+claude mcp remove supabase
+claude mcp add --scope user --transport http supabase "새프로젝트URL"
+```
+
+> **팁**: 처음에는 같은 Supabase 프로젝트를 사용하는 게 편해요!
 
 ---
 
