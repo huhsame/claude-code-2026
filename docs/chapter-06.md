@@ -308,6 +308,16 @@ MCP를 설정하면:
 
 **훨씬 간단합니다!**
 
+### MCP 설정 방법 (미리보기)
+
+Supabase 대시보드에서 연결 명령어를 복사해서 실행하면 끝!
+
+```powershell
+claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/mcp?project_ref=프로젝트ID"
+```
+
+자세한 설정 방법은 다음 챕터에서 배웁니다.
+
 ### MCP 지원 서비스들
 
 Supabase 외에도 다양한 서비스가 MCP를 지원합니다.

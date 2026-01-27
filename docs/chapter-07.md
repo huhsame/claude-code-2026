@@ -5,124 +5,115 @@
 
 ---
 
-## 7-1. Supabase MCP 추가하기
+## 7-1. Supabase에서 MCP 연결 명령어 찾기
 
-### 가계부 프로젝트 열기
+### Step 1: Supabase 대시보드 접속
 
-챕터 5에서 만든 가계부 프로젝트를 VS Code에서 엽니다.
+[supabase.com](https://supabase.com)에 접속해서 로그인합니다.
+챕터 6에서 만든 프로젝트를 클릭합니다.
+
+### Step 2: Project Settings 열기
+
+왼쪽 메뉴 하단에서 **톱니바퀴 아이콘 (Project Settings)**을 클릭합니다.
+
+<!-- 스크린샷: Project Settings 위치 -->
+![Project Settings](./images/ch07-project-settings.png)
+
+### Step 3: MCP 연결 정보 찾기
+
+왼쪽 메뉴에서 **Integrations** 또는 **MCP**를 찾습니다.
+
+<!-- 스크린샷: Integrations 메뉴 -->
+![Integrations](./images/ch07-integrations.png)
+
+### Step 4: 연결 명령어 복사
+
+Claude Code용 연결 명령어가 있습니다. **Copy** 버튼을 클릭해서 복사합니다.
+
+아래와 비슷한 형태입니다:
+
+```powershell
+claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/mcp?project_ref=여러분의프로젝트ID"
+```
+
+<!-- 스크린샷: MCP 연결 명령어 -->
+![MCP 명령어](./images/ch07-mcp-command.png)
+
+> **project_ref** 부분이 여러분의 프로젝트 ID입니다.
+> 각자 다르니까 꼭 본인 대시보드에서 복사하세요!
+
+---
+
+## 7-2. MCP 연결 설정하기
+
+### VS Code 터미널 열기
 
 1. VS Code 실행
-2. `파일(File)` → `폴더 열기(Open Folder)`
-3. `budget` 폴더 선택
+2. 챕터 5에서 만든 `budget` 폴더 열기
+3. `` Ctrl + ` `` 로 터미널 열기
 
-### 터미널에서 클로드 코드 실행
+### 연결 명령어 실행
 
-터미널을 열고 클로드 코드를 실행합니다.
+복사한 명령어를 터미널에 붙여넣고 실행합니다.
+
+```powershell
+claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/mcp?project_ref=여러분의프로젝트ID"
+```
+
+<!-- 스크린샷: 명령어 실행 -->
+![명령어 실행](./images/ch07-run-command.png)
+
+### 설정 완료 확인
+
+아래와 같은 메시지가 나오면 성공입니다.
+
+```
+Added http MCP server supabase with url: https://mcp.supabase.com/mcp?project_ref=...
+```
+
+### 연결된 MCP 확인하기
+
+제대로 추가되었는지 확인합니다.
+
+```powershell
+claude mcp list
+```
+
+`supabase`가 목록에 보이면 성공!
+
+---
+
+## 7-3. 클로드 코드 실행 및 인증
+
+### 클로드 코드 실행
+
+터미널에서 클로드 코드를 실행합니다.
 
 ```powershell
 claude
 ```
 
-### Supabase MCP 추가
+### Supabase 인증
 
-클로드가 실행되면, 아래 명령어로 Supabase MCP를 추가합니다.
+처음 Supabase MCP를 사용하면 인증이 필요합니다.
 
-```
-/mcp
-```
-
-<!-- 스크린샷: /mcp 명령어 입력 -->
-![MCP 명령어](./images/ch07-mcp-command.png)
-
-MCP 메뉴가 나타납니다. 여기서 **Add Server**를 선택합니다.
-
-### MCP 서버 추가하기
-
-Add Server를 선택하면 추가할 MCP 서버 정보를 입력합니다.
-
-**선택 1: Supabase (공식)** 가 보이면 그것을 선택하세요.
-
-또는 직접 입력해야 한다면:
+클로드에게 Supabase 관련 요청을 하면:
 
 ```
-Server name: supabase
-Server URL: https://mcp.supabase.com
+내 Supabase 프로젝트 정보 보여줘
 ```
-
-<!-- 스크린샷: MCP 서버 추가 화면 -->
-![MCP 서버 추가](./images/ch07-add-mcp-server.png)
-
-### MCP 추가 완료
-
-추가가 완료되면 아래와 같은 메시지가 나타납니다.
-
-```
-MCP server 'supabase' added successfully
-```
-
----
-
-## 7-2. Supabase 인증하기
-
-MCP를 추가했으면 이제 Supabase에 로그인해야 합니다.
-
-### 인증 시작
-
-다시 `/mcp` 명령어를 입력합니다.
-
-```
-/mcp
-```
-
-**Supabase** 서버를 선택하고, **Authenticate** (또는 **인증**)를 선택합니다.
-
-<!-- 스크린샷: 인증 메뉴 -->
-![인증 메뉴](./images/ch07-auth-menu.png)
-
-### 브라우저에서 로그인
 
 자동으로 브라우저가 열리고 Supabase 로그인 페이지가 나타납니다.
-
-1. **Supabase 계정으로 로그인** (챕터 6에서 가입한 계정)
-2. **권한 허용** 버튼 클릭
 
 <!-- 스크린샷: 브라우저 인증 화면 -->
 ![브라우저 인증](./images/ch07-browser-auth.png)
 
-### 인증 완료
+1. **Supabase 계정으로 로그인** (챕터 6에서 가입한 계정)
+2. **권한 허용** 버튼 클릭
 
-인증이 완료되면 터미널에 아래와 같은 메시지가 나타납니다.
-
-```
-Authentication successful!
-```
+인증이 완료되면 터미널로 돌아옵니다.
 
 > **이제 클로드가 직접 Supabase에 접속할 수 있습니다!**
-
----
-
-## 7-3. 프로젝트 선택하기
-
-### 클로드에게 프로젝트 확인 요청
-
-클로드에게 Supabase 프로젝트를 확인하도록 요청합니다.
-
-```
-내 Supabase 프로젝트 목록 보여줘
-```
-
-클로드가 MCP를 통해 Supabase에 접속하고 프로젝트 목록을 보여줍니다.
-
-<!-- 스크린샷: 프로젝트 목록 -->
-![프로젝트 목록](./images/ch07-project-list.png)
-
-### 사용할 프로젝트 지정
-
-챕터 6에서 만든 프로젝트 이름을 클로드에게 알려줍니다.
-
-```
-budget 프로젝트를 사용할게
-```
 
 ---
 
@@ -130,7 +121,7 @@ budget 프로젝트를 사용할게
 
 ### 연결 요청
 
-이제 클로드에게 가계부와 Supabase 연결을 요청합니다.
+클로드에게 가계부와 Supabase 연결을 요청합니다.
 
 ```
 지금 만든 가계부 데이터를 Supabase에 저장하고 싶어.
@@ -142,7 +133,7 @@ budget 프로젝트를 사용할게
 MCP가 연결되어 있으니 클로드가 직접 Supabase를 확인하고 작업합니다.
 
 ```
-네, Supabase budget 프로젝트에 테이블을 만들고 연결할게요.
+네, Supabase에 테이블을 만들고 연결할게요.
 
 1. transactions 테이블을 생성합니다
 2. 가계부 코드에 Supabase 연결 코드를 추가합니다
@@ -231,23 +222,22 @@ Supabase 대시보드에서도 확인할 수 있습니다.
 
 ### MCP 연결 확인
 
-MCP가 제대로 연결되었는지 확인합니다.
+MCP가 제대로 추가되었는지 확인합니다.
 
-```
-/mcp
-```
-
-Supabase 서버 옆에 **Connected** 또는 초록색 표시가 있어야 합니다.
-
-### 인증 다시 하기
-
-인증이 만료되었다면 다시 인증합니다.
-
-```
-/mcp
+```powershell
+claude mcp list
 ```
 
-→ Supabase 선택 → **Re-authenticate** 선택
+`supabase`가 목록에 있어야 합니다.
+
+### MCP 삭제 후 다시 추가
+
+문제가 있다면 삭제 후 다시 추가합니다.
+
+```powershell
+claude mcp remove supabase
+claude mcp add --scope user --transport http supabase "https://mcp.supabase.com/mcp?project_ref=여러분의프로젝트ID"
+```
 
 ### 클로드에게 에러 보여주기
 
@@ -262,17 +252,17 @@ Supabase 서버 옆에 **Connected** 또는 초록색 표시가 있어야 합니
 
 ### 자주 발생하는 문제
 
-**문제 1: MCP 서버가 안 보임**
-- 클로드 코드를 종료하고 다시 시작
-- `/mcp` → Add Server로 다시 추가
+**문제 1: 명령어 실행 시 에러**
+- 따옴표가 제대로 들어갔는지 확인
+- URL을 Supabase 대시보드에서 직접 복사했는지 확인
 
 **문제 2: 인증이 안 됨**
 - 브라우저에서 Supabase에 이미 로그인되어 있는지 확인
 - 다른 브라우저로 시도
 
-**문제 3: 프로젝트가 안 보임**
-- Supabase 대시보드에서 프로젝트가 정상적으로 생성되었는지 확인
-- 프로젝트 생성에 몇 분 걸릴 수 있음
+**문제 3: 클로드가 Supabase를 못 찾음**
+- `claude mcp list`로 supabase가 있는지 확인
+- 클로드 코드를 종료하고 다시 시작
 
 ---
 
@@ -383,10 +373,10 @@ MCP가 이미 설정되어 있으니 클로드가 바로 연결해줍니다!
 
 | 단계 | 내용 |
 |------|------|
-| 1 | `/mcp` → Supabase MCP 추가 |
-| 2 | `/mcp` → Supabase 인증 (브라우저 로그인) |
-| 3 | 클로드에게 "Supabase 연결해줘" 요청 |
-| 4 | 클로드가 알아서 테이블 생성 & 코드 수정 |
+| 1 | Supabase 대시보드 → Settings → MCP 연결 명령어 복사 |
+| 2 | 터미널에서 `claude mcp add ...` 명령어 실행 |
+| 3 | `claude` 실행 후 Supabase 인증 (브라우저 로그인) |
+| 4 | 클로드에게 "Supabase 연결해줘" 요청 |
 | 5 | 실행 후 새로고침해서 데이터 유지 확인 |
 
 **핵심**: MCP 한 번 설정하면 클로드가 알아서 다 해줍니다!
