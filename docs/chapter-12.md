@@ -77,16 +77,17 @@ Vercel 대시보드에서 **Add New...** → **Project** 클릭
 
 ### Step 4: 환경변수 설정
 
-Supabase를 사용했다면 환경변수를 추가합니다.
+Supabase 연결 정보를 추가합니다.
 
-**Environment Variables** 섹션에서:
+**Environment Variables** 섹션 펼치기:
 
-```
-VITE_SUPABASE_URL = [본인 Supabase URL]
-VITE_SUPABASE_ANON_KEY = [본인 anon key]
-```
+| Name | Value |
+|------|-------|
+| VITE_SUPABASE_URL | 본인 Supabase URL |
+| VITE_SUPABASE_ANON_KEY | 본인 anon key |
 
-> 프레임워크에 따라 변수명이 다를 수 있습니다 (NEXT_PUBLIC_, VITE_ 등)
+> 변수명은 프로젝트 코드에서 사용한 것과 동일해야 합니다.
+> 클로드에게 "환경변수 뭐 써야 해?" 라고 물어보면 알려줍니다.
 
 ### Step 5: 배포
 
@@ -131,20 +132,16 @@ Vercel의 강력한 기능: **GitHub에 푸시하면 자동으로 재배포!**
 
 ### 테스트해보기
 
-1. VS Code에서 코드 수정 (예: 제목 변경)
+1. 클로드에게 수정 요청
 
 ```
-고구마마켓 헤더 색상을 바꿔줘
+헤더 색상 바꿔줘
 ```
 
 2. 커밋 + 푸시
 
-```
-헤더 색상 변경
-```
-
 3. Vercel 대시보드 확인
-   - **Deployments** 탭에서 새 배포가 진행 중
+   - **Deployments** 탭에서 새 배포가 자동으로 진행됨
 
 4. 배포 완료 후 사이트 접속
    - 변경사항이 반영됨!
