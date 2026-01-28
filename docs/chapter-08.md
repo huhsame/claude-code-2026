@@ -58,9 +58,6 @@ git --version
 
 버전이 나오면 이미 설치된 것입니다 → **8-4로 건너뛰세요**
 
-<!-- 스크린샷: git --version 결과 -->
-![Git 버전 확인](./images/ch08-git-version.png)
-
 ### Step 2: Git 설치 (WSL)
 
 버전이 안 나오면 설치합니다.
@@ -72,9 +69,6 @@ sudo apt install git -y
 
 비밀번호를 물어보면 WSL 설치할 때 설정한 비밀번호를 입력합니다.
 (입력할 때 화면에 안 보이는 게 정상입니다)
-
-<!-- 스크린샷: apt install git -->
-![Git 설치](./images/ch08-git-install.png)
 
 ### Step 3: 설치 확인
 
@@ -96,15 +90,9 @@ git --version
 https://github.com
 ```
 
-<!-- 스크린샷: GitHub 메인 페이지 -->
-![GitHub 메인](./images/ch08-github-main.png)
-
 ### Step 2: Sign up 클릭
 
-**Sign up** 버튼을 클릭합니다.
-
-<!-- 스크린샷: Sign up 버튼 -->
-![Sign up](./images/ch08-github-signup.png)
+오른쪽 상단의 **Sign up** 버튼을 클릭합니다.
 
 ### Step 3: 정보 입력
 
@@ -114,9 +102,6 @@ https://github.com
 | **Password** | 비밀번호 (15자 이상 또는 숫자+소문자 8자 이상) |
 | **Username** | 영어로 아이디 (예: `honggildong`, `myname123`) |
 
-<!-- 스크린샷: 가입 정보 입력 -->
-![가입 정보](./images/ch08-github-form.png)
-
 > **Username**은 나중에 바꿀 수 있지만, 가급적 기억하기 쉬운 걸로 정하세요.
 
 ### Step 4: 이메일 인증
@@ -124,15 +109,9 @@ https://github.com
 입력한 이메일로 인증 코드가 옵니다.
 코드를 입력해서 인증을 완료합니다.
 
-<!-- 스크린샷: 이메일 인증 -->
-![이메일 인증](./images/ch08-github-verify.png)
-
 ### Step 5: 가입 완료
 
 가입이 완료되면 GitHub 대시보드로 이동합니다.
-
-<!-- 스크린샷: GitHub 대시보드 -->
-![대시보드](./images/ch08-github-dashboard.png)
 
 ---
 
@@ -177,9 +156,6 @@ git config --global --list
 ```
 
 `user.name`과 `user.email`이 나오면 성공입니다.
-
-<!-- 스크린샷: git config 결과 -->
-![Git 설정 확인](./images/ch08-git-config.png)
 
 ---
 

@@ -13,10 +13,10 @@
 
 - **고구마마켓**
 - [챕터 8. Git과 GitHub](chapter-08.md)
-- [챕터 9. 고구마마켓 클론 - 시연](chapter-09.md)
-- [챕터 10. Git 브랜치 실습](chapter-10.md)
-- [챕터 11. Vercel 계정 설치](chapter-11.md)
-- [챕터 12. Vercel 배포 - 시연](chapter-12.md)
+- [챕터 9. 고구마마켓 만들기 (1) - 상품 목록](chapter-09.md)
+- [챕터 10. 고구마마켓 만들기 (2) - 상세/등록](chapter-10.md)
+- [챕터 11. 고구마마켓 만들기 (3) - 수정/삭제/Supabase](chapter-11.md)
+- [챕터 12. Vercel로 배포하기](chapter-12.md)
 
 - **AI 챗봇**
 - [챕터 13. 간단 챗봇 만들기](chapter-13.md)
