@@ -15,7 +15,6 @@
 ### Step 2: Connect 버튼 클릭
 
 프로젝트 화면 상단에 **Connect** 버튼이 있습니다. 클릭합니다.
-![alt text](iShot_2025-11-28_18.24.34.png)
 
 ### Step 3: MCP 선택
 

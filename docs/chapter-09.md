@@ -52,38 +52,46 @@ Settings → API에서 확인:
 
 ## 9-3. MCP로 Supabase 연결
 
-챕터 7에서 배운 Supabase MCP를 연결합니다.
+새로 만든 Supabase 프로젝트를 클로드 코드에 연결합니다.
 
-### 간략한 설정
+### Step 1: Connect 버튼 클릭
 
-클로드 코드 설정에서 MCP 서버를 추가합니다:
+Supabase 프로젝트 화면 상단의 **Connect** 버튼을 클릭합니다.
 
-```json
-{
-  "mcpServers": {
-    "supabase": {
-      "command": "npx",
-      "args": ["-y", "@supabase/mcp-server"],
-      "env": {
-        "SUPABASE_URL": "본인 Project URL",
-        "SUPABASE_SERVICE_ROLE_KEY": "본인 service_role key"
-      }
-    }
-  }
-}
+### Step 2: MCP → Claude Code 선택
+
+1. 팝업에서 **MCP** 선택
+2. **Claude Code** 선택
+
+### Step 3: 명령어 복사
+
+화면에 나오는 명령어를 **Copy** 버튼으로 복사합니다.
+
+아래와 비슷한 형태입니다:
+
+```bash
+claude mcp add supabase --transport http "https://mcp.supabase.com/..."
 ```
 
-> 자세한 방법은 챕터 7을 참고하세요.
+### Step 4: 터미널에서 실행
 
-### 클로드 코드 실행
+VS Code 터미널에 붙여넣고 실행합니다.
 
-터미널에서 클로드 코드를 실행합니다:
+```
+Added http MCP server supabase...
+```
+
+이런 메시지가 나오면 성공!
+
+### Step 5: 클로드 코드 실행
 
 ```bash
 claude
 ```
 
 Supabase MCP가 연결되면 클로드가 직접 테이블을 만들고 데이터를 조작할 수 있습니다.
+
+> 자세한 방법은 챕터 7을 참고하세요.
 
 ---
 
